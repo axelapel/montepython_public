@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 .. module:: MontePython
    :synopsis: Main module
@@ -9,12 +9,12 @@ Monte Python, a Monte Carlo Markov Chain code (with Class!)
 import sys
 import warnings
 
-import io_mp       # all the input/output mechanisms
+import io_mp  # all the input/output mechanisms
 from run import run
 
 
 # -----------------MAIN-CALL---------------------------------------------
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Default action when facing a warning is being remapped to a custom one
     warnings.showwarning = io_mp.warning_message
 
@@ -23,6 +23,7 @@ if __name__ == '__main__':
     MPI_ASKED = False
     try:
         from mpi4py import MPI
+
         NPROCS = MPI.COMM_WORLD.Get_size()
         if NPROCS > 1:
             MPI_ASKED = True
@@ -35,6 +36,7 @@ if __name__ == '__main__':
     if MPI_ASKED:
         # This import has to be there in case MPI is not installed
         from run import mpi_run
+
         sys.exit(mpi_run())
     else:
         sys.exit(run())
