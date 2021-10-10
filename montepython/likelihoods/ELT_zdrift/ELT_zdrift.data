@@ -1,0 +1,5 @@
+# Mock redshift-drift dataset for the Extremely Large Telescope
+
+ELT_zdrift.data_directory = data.path["data"]
+ELT_zdrift.fiducial_file  = "zdrift/ELT_20years.dat"
+ELT_zdrift.time_span      = 20

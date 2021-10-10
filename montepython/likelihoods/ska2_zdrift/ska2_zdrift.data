@@ -1,0 +1,5 @@
+# Mock redshift-drift dataset for the Phase 2 - Square Kilometer Array
+
+ska2_zdrift.data_directory = data.path["data"]
+ska2_zdrift.fiducial_file  = "zdrift/SKA2_6months.dat"
+ska2_zdrift.time_span      = .5
